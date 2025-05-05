@@ -63,3 +63,9 @@
   margin: 10px 0;
   font-size: 1.1rem;
 }
+
+.home-wrapper {
+  background-color: #f9f9f9; /* Light grey */
+  min-height: 100vh;
+  padding-bottom: 2rem;
+}

@@ -26,6 +26,7 @@ const Home = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
+    
     <div style={{ padding: "2rem", maxWidth: "1200px", margin: "0 auto" }}>
       <h2 style={{ textAlign: "center" }}>
       Welcome {user?.name || user?.username?.split('@')[0] || "Guest"}
