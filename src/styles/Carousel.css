@@ -1,29 +1,30 @@
-.carousel-container {
+.carousel-wrapper {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
   overflow: hidden;
+  margin-bottom: 2rem;
 }
 
-.carousel-image {
+.carousel {
+  display: flex;
+  animation: slide 15s infinite linear;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  transition: transform 0.5s ease;
+}
+
+.carousel-img {
   width: 100%;
-  height: 400px;
-  object-fit: cover;
+  height: auto;
+  display: block;
   border-radius: 8px;
+  object-fit: cover;
 }
 
-.slick-dots {
-  bottom: 15px;
+/* Optional: keyframes to auto-scroll */
+@keyframes slide {
+  0%, 33%   { transform: translateX(0); }
+  34%, 66%  { transform: translateX(-100%); }
+  67%, 100% { transform: translateX(-200%); }
 }
-
-.slick-dots li button:before {
-  font-size: 12px;
-  color: #e5e8ea;
-  opacity: 0.75;
-}
-
-.slick-dots li.slick-active button:before {
-  color: #cbcccd;
-  opacity: 1;
-}
-
