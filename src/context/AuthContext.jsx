@@ -6,7 +6,7 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
-  // ✅ Handles initial login from localStorage
+  // Handles initial login from localStorage
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
         const username = decoded['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'];
         setUser({ token, role, email: decoded.sub, username, name: displayName });
 
-        // 🔐 Set logout timer on app refresh
+        // Set logout timer on app refresh
         const exp = decoded.exp * 1000;
         const now = Date.now();
         const timeLeft = exp - now;
@@ -41,7 +41,7 @@ export const AuthProvider = ({ children }) => {
     const displayName = decoded['displayName'];
     const email = decoded.sub;
 
-    // ⏰ Schedule logout based on token expiry
+    // Schedule logout based on token expiry
     const exp = decoded.exp * 1000;
     const now = Date.now();
     const timeLeft = exp - now;

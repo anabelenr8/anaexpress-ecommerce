@@ -28,7 +28,7 @@ const Register = () => {
     setLoading(true);
 
     try {
-      // ✅ Step 1: Register user
+      // Step 1: Register user
       const registerResponse = await axios.post('https://localhost:7234/api/Account/register', {
         name: formData.name,
         email: formData.email,
@@ -36,9 +36,9 @@ const Register = () => {
       });
 
       const userId = registerResponse.data.userId;
-      console.log('✅ Registered User ID:', userId);
+      console.log('Registered User ID:', userId);
 
-      // ✅ Step 2: Assign role (if not default "User")
+      // Step 2: Assign role (if not default "User")
       if (formData.role !== 'User') {
         await axios.post('https://localhost:7234/api/Roles/assign-role-to-user', {
           userId,
@@ -46,7 +46,7 @@ const Register = () => {
         });
       }
 
-      // ✅ Step 3: Auto-login after register
+      // Step 3: Auto-login after register
       const loginResponse = await axios.post('https://localhost:7234/api/Account/login', {
         email: formData.email,
         password: formData.password,
@@ -55,9 +55,9 @@ const Register = () => {
       const token = loginResponse.data.token;
       login(token); // Save token via context
 
-      toast.success('🎉 Registration successful! Logging you in...');
+      toast.success('Registration successful! Logging you in...');
 
-      // ✅ Step 4: Redirect based on role
+      // Step 4: Redirect based on role
       if (formData.role === 'Admin') {
         navigate('/admin');
       } else {
@@ -65,8 +65,8 @@ const Register = () => {
       }
 
     } catch (error) {
-      console.error('❌ Registration error:', error);
-      toast.error(error.response?.data?.message || '❌ Registration failed.');
+      console.error('Registration error:', error);
+      toast.error(error.response?.data?.message || 'Registration failed.');
     } finally {
       setLoading(false);
     }

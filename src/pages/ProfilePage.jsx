@@ -11,7 +11,7 @@ const ProfilePage = () => {
     address: "",
   });
 
-  const { dataVersion, refreshData } = useApp(); // ✅ access refresh system
+  const { dataVersion, refreshData } = useApp(); // access refresh system
 
   const fetchProfile = async () => {
     try {
@@ -30,7 +30,7 @@ const ProfilePage = () => {
   };
 
   useEffect(() => {
-    fetchProfile(); // ✅ reloads when dataVersion changes
+    fetchProfile(); // reloads when dataVersion changes
   }, [dataVersion]);
 
   const handleChange = (e) => {
@@ -57,10 +57,10 @@ const ProfilePage = () => {
       );
       refreshData();
 
-      alert("✅ Profile Updated Successfully!");
+      alert("Profile Updated Successfully!");
     } catch (error) {
       console.error("Error updating profile:", error);
-      alert("❌ Failed to update profile!");
+      alert("Failed to update profile!");
     }
   };
 

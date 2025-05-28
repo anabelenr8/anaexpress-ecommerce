@@ -103,10 +103,10 @@ const AddressPage = () => {
       localStorage.setItem('shippingAddress', res.data.street);
       refreshData();
 
-      alert('✅ Default address updated!');
+      alert('Default address updated!');
     } catch (error) {
       console.error('Error setting default address:', error);
-      alert('❌ Failed to set default address.');
+      alert('Failed to set default address.');
     }
   };
 

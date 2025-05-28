@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '../../styles/Carousel.css';
 
- // Add this for additional layout fixes
+
 
 const images = [
   {

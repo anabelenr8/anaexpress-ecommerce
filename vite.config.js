@@ -9,7 +9,7 @@ export default defineConfig({
       '/api': {
         target: 'https://localhost:7234',
         changeOrigin: true,
-        secure: false, // 👈 needed for self-signed HTTPS cert
+        secure: false, // needed for self-signed HTTPS cert
       },
     },
   },

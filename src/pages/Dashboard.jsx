@@ -16,7 +16,7 @@ const Dashboard = () => {
   useEffect(() => {
     getProducts()
       .then(res => {
-        console.log('📦 Products received:', res.data);
+        console.log('Products received:', res.data);
         setProducts(res.data);
       })
       .catch(err => console.error('❌ Failed to fetch products:', err));

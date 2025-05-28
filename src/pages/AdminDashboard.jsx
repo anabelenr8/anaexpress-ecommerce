@@ -11,7 +11,7 @@ const AdminDashboard = () => {
   const { refreshData } = useApp();
 
   useEffect(() => {
-    refreshData(); // 🔁 Trigger initial data sync
+    refreshData(); // Trigger initial data sync
   }, []);
 
 

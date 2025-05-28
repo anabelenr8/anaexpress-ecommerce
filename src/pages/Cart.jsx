@@ -31,7 +31,7 @@ const Cart = () => {
     // Set default shipping address
     setShippingAddress(defaultShippingAddress);
 
-    // 🔄 Fetch default payment method
+    // Fetch default payment method
     const fetchDefaultPayment = async () => {
       try {
         const res = await axios.get(
@@ -41,7 +41,7 @@ const Cart = () => {
           }
         );
 
-        // ✅ Format label if available
+        // Format label if available
         if (res.data && res.data.cardType && res.data.last4Digits) {
           const label = `${res.data.cardType} ending in ${res.data.last4Digits}`;
           setPaymentMethod(label);
@@ -49,7 +49,7 @@ const Cart = () => {
           setPaymentMethod("Credit Card");
         }
       } catch (err) {
-        console.warn("⚠️ No default payment method, using fallback.");
+        console.warn("No default payment method, using fallback.");
         setPaymentMethod("Credit Card");
       }
     };
@@ -112,7 +112,7 @@ const Cart = () => {
 
       const orderId = response.data.orderId; // depends on backend!
 
-      // ⬇️⬇️ NEW - Create the Payment right after
+      // Create the Payment right after
       const decodedToken = JSON.parse(atob(token.split(".")[1]));
       const userId =
         decodedToken["sub"] ||
@@ -144,11 +144,11 @@ const Cart = () => {
 
       handleClearCart();
 
-      alert(`✅ Order placed! Order ID: ${response.data.orderId || "N/A"}`);
+      alert(`Order placed! Order ID: ${response.data.orderId || "N/A"}`);
       handleClearCart();
     } catch (err) {
       console.error("Order failed:", err);
-      alert("❌ Something went wrong. Please try again.");
+      alert("Something went wrong. Please try again.");
     }
   };
 

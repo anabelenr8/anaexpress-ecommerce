@@ -39,7 +39,7 @@ const PaymentsPage = () => {
       cardType: ''
     });
 
-    alert("✅ Payment method added!");
+    alert("Payment method added!");
     refreshData();
   };
 
@@ -49,11 +49,11 @@ const PaymentsPage = () => {
       await axios.put(`https://localhost:7234/api/PaymentMethod/default/${id}`, {}, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      alert('✅ Default payment method updated!');
+      alert('Default payment method updated!');
       refreshData();
     } catch (err) {
       console.error('Error setting default payment method:', err);
-      alert('❌ Failed to set default payment method.');
+      alert('Failed to set default payment method.');
     }
   };
 
